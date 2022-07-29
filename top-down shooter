@@ -1,0 +1,150 @@
+
+#include <iostream>
+using namespace std;
+
+bool gameover;
+
+constant int width = 50;
+int& length = width;
+int 
+
+void setup()
+{
+
+  gameover = false;
+
+}
+
+void draw()
+{
+
+}
+
+void input()
+{
+
+}
+
+void logic()
+{
+
+}
+class hp()
+{
+public:
+
+  bool setmax_hp(int new_max_hp)
+  {
+    //stops hp from falling below zero
+    if (new_max_hp < 1)
+    {
+     return false;
+  
+     max_hp = new_max_hp;
+    }
+    //stops hp from rising above the max
+    else if(current_hp > max_hp)
+    {
+      current_hp = max_hp;
+    
+    return true;
+     }
+  }
+  
+  // calls the max amount of health
+ int getmaxHp()
+  {
+    return max_hp;
+  }
+  
+ int currentHp (int Cur_hp)
+  {
+    return current_hp;
+  }
+  
+  //function for taking damage
+  bool takedamage(int Tdamage)
+  {
+    //stops damage from going negative
+    if (Tdamage > current_hp)
+    {
+      current_hp = 0;
+      return;
+    }
+    // takes damage
+    else
+    {
+    currrent_hp -= Tdamage;
+  }
+  
+  //function for healing
+  void heal (int heal)
+  {
+    //stops over healing
+    if (heal + current_hp > max_hp)
+    {
+      current_hp = Max_hp;
+    }
+    // allows the full amount of healing
+    else
+    {
+      heal += current_hp;
+    }
+  }
+  
+  hp() {current_hp = 1; max_hp = 1}
+  
+  hp(int cHP, int mHP)
+  {
+    current_hp = cHP;
+    max_hp = mHP;
+    if (current_hp > max_hp)
+    {
+      current_hp = max_hp;
+    }
+    
+  }
+
+private:
+int max_hp;
+int current_hp;
+}
+
+
+//shoots fast, 30 ammo count, weak bullets, 7 health
+class gunman: public hp
+{
+public:
+  const int hpgrowth = 1u;
+  warrior() : hp(7)
+  {
+  
+  }
+  
+private:
+
+}
+
+//powerful shots, but slower, 4 ammo count. 5 health
+void wizard()
+{
+int max_hp = 5
+int current_hp;
+
+}
+
+//longer range, and peircing, 1 ammo count, 4 heath
+void archer()
+{
+int max_hp = 5
+int current_hp;
+
+}
+
+int main()
+{
+
+  setup()
+  
+  return 0;
+}
