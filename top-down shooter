@@ -34,10 +34,11 @@ void logic()
 
 }
 
+//function for everything to do with the health
 class hp
 {
 public:
-
+    //sets limits for player hp
     bool setmax_hp(int new_max_hp)
     {
         //stops hp from falling below zero
@@ -130,10 +131,9 @@ class gunman : public hp
 {
 public:
     static const int hpgrowth = 7u;
-    gunman() : hp(hpgrowth, hpgrowth)
-    {
-
-    };
+    gunman() : hp(hpgrowth, hpgrowth), damage({};
+    
+    
 
 private:
 
@@ -156,7 +156,33 @@ private:
 int main()
 {
 
-    setup();
+    renderwindow window(VideoMode(800,600), "360 shooter!", style::Default);
+    window.setFrameratelimit(60);
+    
+    circleshape player(25.f);
+    player.setFillColor(Color::white);
+    
+    vector2f playercenter;
+    vector2f mouseposwindow;
+    vector2f aimdir;
+    vector2f aimdirNorm;
+    
+    while (window.isOpen())
+    {
+        Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == Event::closed)
+                window.close();
+        }
+        //update
+        
+        
+        //draw
+        window.clear();
+        
+        window.display();
+    }
 
     return 0;
 }
